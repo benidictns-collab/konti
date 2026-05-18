@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>КонтиТестЮГ — Сертификация и декларирование без рисков</title>
+<meta name="description" content="КонтиТестЮГ — ваш надёжный партнёр в мире стандартов качества и безопасности. Сертификация, декларирование, ИСО, Честный знак.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--primary:#0047B3;--primary-light:#1DA1F2;--primary-dark:#003380;
+--cyan:#06B6D4;--bg:#F5F8FC;--bg-deep:#EBF2FA;--white:#FFFFFF;
+--text:#0A1628;--text-secondary:#475569;--text-muted:#94A3B8;
+--border:rgba(0,71,179,0.08);--border-light:rgba(0,71,179,0.04);
+--glass:rgba(255,255,255,0.6);--glass-strong:rgba(255,255,255,0.85);
+--glass-border:rgba(255,255,255,0.4);
+--shadow-xs:0 1px 2px rgba(0,71,179,0.04);
+--shadow-sm:0 2px 8px rgba(0,71,179,0.06);
+--shadow-md:0 8px 24px rgba(0,71,179,0.08);
+--shadow-lg:0 16px 48px rgba(0,71,179,0.12);
+--shadow-xl:0 24px 64px rgba(0,71,179,0.16);
+--radius-xs:6px;--radius-sm:10px;--radius-md:14px;--radius-lg:20px;--radius-xl:28px;
+--ease:cubic-bezier(0.16,1,0.3,1);--transition:all 0.35s var(--ease);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Manrope',sans-serif;line-height:1.15;letter-spacing:-0.025em}
+::selection{background:rgba(0,71,179,0.12);color:var(--primary)}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(0,71,179,0.15);border-radius:3px}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+@media(min-width:768px){.container{padding:0 36px}}
+@media(min-width:1024px){.container{padding:0 48px}}
+
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.orb-1{width:500px;height:500px;background:rgba(0,71,179,0.07);top:-10%;right:-10%;animation:od 20s ease-in-out infinite}
+.orb-2{width:400px;height:400px;background:rgba(29,161,242,0.06);bottom:-10%;left:-5%;animation:od 25s ease-in-out infinite reverse}
+@keyframes od{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-20px,30px) scale(0.95)}}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background 0.35s ease,border-bottom 0.35s ease,box-shadow 0.35s ease}
+.header-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:8px 20px;gap:20px}
+@media(min-width:768px){.header-inner{padding:8px 36px;gap:28px}}
+.header.scrolled{background:rgba(245,248,252,0.88);backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid var(--border-light);box-shadow:var(--shadow-xs)}
+
+.logo{display:flex;align-items:center;text-decoration:none;cursor:pointer;flex-shrink:0;margin-top:18px}
+@media(max-width:767px){.logo{margin-top:10px}}
+.logo-img{height:170px;max-width:55vw;object-fit:contain;width:auto;display:block;transition:var(--transition)}
+@media(max-width:767px){.logo-img{height:80px;max-width:50vw}}
+
+.nav{display:none;align-items:center;gap:2px;flex-shrink:1;flex-wrap:nowrap}
+@media(min-width:768px){.nav{display:flex}}
+.nav a{font-size:13px;font-weight:500;color:var(--text-secondary);text-decoration:none;padding:6px 10px;border-radius:var(--radius-xs);transition:var(--transition);cursor:pointer;white-space:nowrap}
+.nav a:hover{color:var(--primary);background:rgba(0,71,179,0.04)}
+.nav a.active{color:var(--primary);font-weight:600;background:rgba(0,71,179,0.06)}
+.header-actions{display:none;align-items:center;gap:10px;flex-shrink:0}
+@media(min-width:768px){.header-actions{display:flex}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;border:none;border-radius:var(--radius-sm);cursor:pointer;transition:var(--transition);text-decoration:none;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,var(--primary) 0%,#0059CC 100%);color:#fff;padding:10px 22px;box-shadow:0 2px 12px rgba(0,71,179,0.3),inset 0 1px 0 rgba(255,255,255,0.1)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,71,179,0.35)}
+.btn-secondary{background:var(--white);color:var(--primary);padding:10px 22px;border:1.5px solid var(--border);box-shadow:var(--shadow-xs)}
+.btn-secondary:hover{border-color:rgba(0,71,179,0.2);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+.btn-lg{padding:14px 28px;font-size:14.5px;border-radius:var(--radius-md)}
+
+.burger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1002;flex-shrink:0}
+@media(min-width:768px){.burger{display:none}}
+.burger span{width:20px;height:1.5px;background:var(--text);border-radius:2px;transition:var(--transition);transform-origin:center}
+.burger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4.5px)}
+.burger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4.5px)}
+
+.mobile-menu{position:fixed;inset:0;background:rgba(245,248,252,0.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:20px 24px 24px;display:flex;flex-direction:column;gap:2px;transform:translateX(100%);transition:transform 0.5s var(--ease);z-index:1001;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-logo{padding:8px 16px 24px;border-bottom:1px solid var(--border-light);margin-bottom:8px}
+.mobile-menu-logo img{height:90px;max-width:70vw;object-fit:contain;width:auto}
+.mobile-menu a{font-size:17px;font-weight:600;color:var(--text);text-decoration:none;padding:16px 16px;border-radius:var(--radius-sm);display:flex;align-items:center;gap:14px;transition:var(--transition);cursor:pointer}
+.mobile-menu a:hover{background:rgba(0,71,179,0.04);color:var(--primary)}
+.mobile-menu a .iconify{font-size:20px;color:var(--primary-light);opacity:0.7}
+
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--primary-light),var(--cyan));z-index:1001;width:0;transition:width 80ms linear}
+
+.page{display:none;opacity:0;transform:translateY(16px)}
+.page.active{display:block}
+.page.visible{opacity:1;transform:translateY(0);transition:opacity 0.5s var(--ease),transform 0.5s var(--ease)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:80ms}.reveal-d2{transition-delay:160ms}.reveal-d3{transition-delay:240ms}
+.reveal-d4{transition-delay:320ms}.reveal-d5{transition-delay:400ms}.reveal-d6{transition-delay:480ms}
+.reveal-left{opacity:0;transform:translateX(-24px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(24px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(0.96);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+.hero{min-height:100dvh;display:flex;align-items:center;position:relative;overflow:hidden;padding:200px 0 60px}
+@media(min-width:768px){.hero{padding:220px 0 80px}}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,71,179,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,71,179,0.025) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black 10%,transparent 70%)}
+.hero .container{position:relative;z-index:2;display:grid;gap:40px;align-items:center}
+@media(min-width:1024px){.hero .container{grid-template-columns:1.1fr 0.9fr;gap:60px}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 6px;background:var(--glass-strong);border:1px solid var(--glass-border);border-radius:100px;font-size:12.5px;font-weight:600;color:var(--primary);backdrop-filter:blur(12px);margin-bottom:20px;box-shadow:var(--shadow-xs)}
+.hero-badge-dot{width:7px;height:7px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:50%;position:relative}
+.hero-badge-dot::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));opacity:0.3;animation:ping 2s cubic-bezier(0,0,0.2,1) infinite}
+@keyframes ping{75%,100%{transform:scale(2.5);opacity:0}}
+.hero h1{font-size:clamp(30px,5.2vw,54px);font-weight:800;letter-spacing:-0.035em;line-height:1.08;margin-bottom:20px}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 50%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(15px,1.8vw,18px);color:var(--text-secondary);line-height:1.75;max-width:520px;margin-bottom:36px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:10px}
+.hero-visual{display:none;position:relative}
+@media(min-width:1024px){.hero-visual{display:block;min-height:420px}}
+.hero-shield-wrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.hero-shield-wrap svg{width:260px;height:260px;filter:drop-shadow(0 20px 40px rgba(0,71,179,0.12))}
+.floating-card{position:absolute;background:var(--glass-strong);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:18px 20px;box-shadow:var(--shadow-md);transition:var(--transition);cursor:default}
+.floating-card:hover{transform:translateY(-3px) !important;box-shadow:var(--shadow-lg)}
+.fc-1{top:8%;right:0;width:230px;animation:fcf 7s ease-in-out infinite}
+.fc-2{bottom:18%;left:0;width:220px;animation:fcf 7s ease-in-out infinite 2s}
+.fc-3{top:48%;right:-8%;width:200px;animation:fcf 7s ease-in-out infinite 4s}
+@keyframes fcf{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.fc-icon{width:36px;height:36px;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,71,179,0.2)}
+.fc-title{font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;margin-bottom:3px}
+.fc-desc{font-size:12px;color:var(--text-secondary);line-height:1.5}
+
+.trust-strip{border-bottom:1px solid var(--border-light);background:var(--white);position:relative;z-index:2}
+.trust-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 40px;padding:24px 0}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--text)}
+.trust-item .iconify{font-size:18px;color:var(--primary-light)}
+
+.section{padding:72px 0}
+@media(min-width:768px){.section{padding:96px 0}}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--primary);margin-bottom:14px}
+.section-label::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:1px}
+.section-title{font-size:clamp(26px,3.8vw,42px);font-weight:800;margin-bottom:12px;letter-spacing:-0.03em}
+.section-subtitle{font-size:16px;color:var(--text-secondary);max-width:560px;line-height:1.7}
+.section-center{text-align:center}
+.section-center .section-subtitle{margin:0 auto}
+
+.about-grid{display:grid;gap:48px;align-items:center}
+@media(min-width:768px){.about-grid{grid-template-columns:1fr 1fr}}
+.about-features{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.about-feat{display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:var(--radius-sm);transition:var(--transition)}
+.about-feat:hover{background:var(--white);box-shadow:var(--shadow-sm)}
+.about-feat-icon{width:40px;height:40px;min-width:40px;border-radius:var(--radius-sm);background:linear-gradient(135deg,rgba(0,71,179,0.07),rgba(29,161,242,0.1));display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:18px;transition:var(--transition)}
+.about-feat:hover .about-feat-icon{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;box-shadow:0 2px 8px rgba(0,71,179,0.2)}
+.about-feat h4{font-size:14.5px;font-weight:700;margin-bottom:2px}
+.about-feat p{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.about-visual{position:relative}
+.about-img{border-radius:var(--radius-xl);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--primary) 0%,#0066CC 40%,var(--primary-light) 100%);display:flex;align-items:center;justify-content:center}
+.about-img .iconify{font-size:100px;color:rgba(255,255,255,0.2)}
+.about-badge{position:absolute;bottom:-16px;right:-8px;background:var(--white);border-radius:var(--radius-md);padding:16px 20px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:14px}
+@media(min-width:768px){.about-badge{right:-24px}}
+.about-badge .num{font-family:'Manrope',sans-serif;font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--primary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.about-badge .lbl{font-size:12px;color:var(--text-secondary);line-height:1.4}
+
+.stats{background:var(--white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border-light)}
+@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--white);padding:32px 20px;text-align:center}
+.stat-num{font-family:'Manrope',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:800;background:linear-gradient(135deg,var(--primary),var(--primary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px}
+.stat-label{font-size:13px;color:var(--text-secondary)}
+
+.adv-grid{display:grid;gap:16px}
+@media(min-width:640px){.adv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.adv-grid{grid-template-columns:repeat(3,1fr)}}
+.adv-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;transition:var(--transition);position:relative;overflow:hidden}
+.adv-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--primary-light),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease)}
+.adv-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:transparent}
+.adv-card:hover::after{transform:scaleX(1)}
+.adv-icon{width:46px;height:46px;border-radius:var(--radius-sm);background:linear-gradient(135deg,rgba(0,71,179,0.06),rgba(29,161,242,0.1));display:flex;align-items:center;justify-content:center;font-size:21px;color:var(--primary);margin-bottom:18px;transition:var(--transition)}
+.adv-card:hover .adv-icon{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;box-shadow:0 4px 12px rgba(0,71,179,0.25);transform:scale(1.05)}
+.adv-card h3{font-size:16.5px;font-weight:700;margin-bottom:6px}
+.adv-card p{font-size:13.5px;color:var(--text-secondary);line-height:1.6}
+
+.benefits-section{background:linear-gradient(135deg,var(--primary) 0%,#0059CC 50%,var(--primary-light) 100%);position:relative;overflow:hidden}
+.benefits-section::before{content:'';position:absolute;top:-40%;right:-20%;width:60%;height:180%;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 50%);pointer-events:none}
+.benefits-section .section-title{color:#fff}
+.benefits-grid{display:grid;gap:16px}
+@media(min-width:640px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.benefits-grid{grid-template-columns:repeat(4,1fr)}}
+.benefit-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:28px;transition:0.35s var(--ease);transition-property:transform,background,box-shadow}
+.benefit-card:hover{background:rgba(255,255,255,0.14);transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.15)}
+.benefit-card .iconify{font-size:28px;color:rgba(255,255,255,0.9);margin-bottom:14px}
+.benefit-card h4{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.benefit-card p{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.55}
+
+.cta-section{position:relative;overflow:hidden}
+.cta-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:40px;position:relative;overflow:hidden;box-shadow:var(--shadow-sm)}
+@media(min-width:768px){.cta-card{padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}}
+.cta-card h2{font-size:clamp(22px,3vw,32px);font-weight:800;margin-bottom:10px}
+.cta-card>p{color:var(--text-secondary);font-size:15px}
+.cta-form{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+@media(min-width:768px){.cta-form{margin-top:0}}
+.cta-form-row{display:grid;gap:10px}
+@media(min-width:480px){.cta-form-row{grid-template-columns:1fr 1fr}}
+.cta-form input,.cta-form textarea{padding:13px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;transition:var(--transition);resize:none;width:100%}
+.cta-form input::placeholder,.cta-form textarea::placeholder{color:var(--text-muted)}
+.cta-form input:focus,.cta-form textarea:focus{outline:none;border-color:var(--primary-light);background:var(--white);box-shadow:0 0 0 3px rgba(29,161,242,0.1)}
+.cta-form .btn-submit{padding:14px;font-size:14.5px;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer;transition:var(--transition);box-shadow:0 4px 16px rgba(0,71,179,0.25)}
+.cta-form .btn-submit:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,71,179,0.35)}
+
+.page-hero{padding:220px 0 48px;position:relative;overflow:hidden}
+@media(min-width:768px){.page-hero{padding:240px 0 64px}}
+.page-hero::before{content:'';position:absolute;top:0;right:-15%;width:50%;height:100%;background:radial-gradient(circle,rgba(29,161,242,0.06) 0%,transparent 60%);pointer-events:none}
+.page-hero .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,71,179,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(0,71,179,0.018) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,black 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,black 10%,transparent 70%);pointer-events:none}
+.page-hero .container{position:relative;z-index:2}
+.page-hero h1{font-size:clamp(28px,4.5vw,46px);font-weight:800;margin-bottom:10px}
+.page-hero .page-sub{font-size:clamp(15px,1.8vw,18px);color:var(--text-secondary);max-width:580px;line-height:1.7}
+
+.breadcrumbs{padding:0 0 16px;font-size:12.5px;display:flex;align-items:center;gap:6px;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none;transition:var(--transition);cursor:pointer}
+.breadcrumbs a:hover{color:var(--primary)}
+.breadcrumbs .sep{opacity:0.4}
+.breadcrumbs .cur{color:var(--text-secondary);font-weight:600}
+
+.svc-grid{display:grid;gap:20px}
+@media(min-width:640px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+.svc-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;transition:var(--transition);position:relative;display:flex;flex-direction:column;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--primary-light),var(--cyan));opacity:0;transition:opacity 0.4s var(--ease)}
+.svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.svc-card:hover::before{opacity:1}
+.svc-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
+.svc-icon{width:48px;height:48px;min-width:48px;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;font-size:21px;color:#fff;transition:var(--transition);box-shadow:0 2px 8px rgba(0,71,179,0.2)}
+.svc-card:hover .svc-icon{transform:scale(1.08) rotate(-3deg);box-shadow:0 4px 16px rgba(0,71,179,0.3)}
+.svc-card h3{font-size:17px;font-weight:700;margin-bottom:4px}
+.svc-desc{font-size:13.5px;color:var(--text-secondary);line-height:1.65;margin-bottom:16px;flex:1}
+.svc-benefits{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.svc-benefit{display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--text)}
+.svc-benefit .iconify{color:var(--primary-light);font-size:14px;flex-shrink:0;margin-top:2px}
+.svc-footer{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid var(--border-light);margin-top:auto}
+.svc-time{font-size:12.5px;color:var(--text-muted);display:flex;align-items:center;gap:5px}
+.svc-time .iconify{color:var(--primary-light);font-size:14px}
+
+.timeline{margin-top:40px;padding-left:28px;position:relative}
+.timeline::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--primary),var(--primary-light),rgba(29,161,242,0.15));border-radius:1px}
+.tl-item{position:relative;padding-bottom:40px;padding-left:20px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-28px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--white);border:2.5px solid var(--primary);z-index:1;transition:var(--transition)}
+.tl-item:hover .tl-dot{background:var(--primary);box-shadow:0 0 0 4px rgba(0,71,179,0.12)}
+.tl-item h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.tl-item p{font-size:13.5px;color:var(--text-secondary);line-height:1.65}
+.tl-num{font-size:11px;font-weight:700;color:var(--primary);margin-bottom:6px;letter-spacing:0.05em}
+
+.val-grid{display:grid;gap:16px}
+@media(min-width:640px){.val-grid{grid-template-columns:repeat(2,1fr)}}
+.val-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;display:flex;gap:16px;transition:var(--transition)}
+.val-card:hover{box-shadow:var(--shadow-sm);border-color:transparent;transform:translateY(-2px)}
+.val-num{font-family:'Manrope',sans-serif;font-size:28px;font-weight:800;background:linear-gradient(135deg,rgba(0,71,179,0.12),rgba(29,161,242,0.12));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;min-width:36px;line-height:1}
+.val-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.val-card p{font-size:13px;color:var(--text-secondary);line-height:1.6}
+
+.cases-grid{display:grid;gap:16px}
+@media(min-width:640px){.cases-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.cases-grid{grid-template-columns:repeat(3,1fr)}}
+.case-card{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+.case-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease)}
+.case-card:hover img{transform:scale(1.06)}
+.case-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.88) 0%,rgba(0,71,179,0.4) 50%,rgba(0,71,179,0.05) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;transition:var(--transition)}
+.case-card:hover .case-overlay{background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(29,161,242,0.45) 50%,rgba(29,161,242,0.08) 100%)}
+.case-overlay h3{color:#fff;font-size:17px;font-weight:700;margin-bottom:4px}
+.case-overlay p{color:rgba(255,255,255,0.65);font-size:12.5px;line-height:1.5}
+.case-arrow{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;opacity:0;transform:translate(6px,-6px);transition:var(--transition)}
+.case-card:hover .case-arrow{opacity:1;transform:translate(0,0)}
+.case-tag{display:inline-flex;padding:4px 10px;background:rgba(255,255,255,0.12);backdrop-filter:blur(4px);border-radius:100px;font-size:11px;color:rgba(255,255,255,0.8);font-weight:600;margin-bottom:8px;width:fit-content}
+
+.case-detail{padding:48px 0;border-bottom:1px solid var(--border-light)}
+.case-detail:last-child{border-bottom:none}
+.case-detail-grid{display:grid;gap:32px;align-items:center}
+@media(min-width:768px){.case-detail-grid{grid-template-columns:1fr 1fr;gap:48px}}
+.case-detail h3{font-size:22px;font-weight:800;margin-bottom:8px}
+.case-detail .case-detail-desc{font-size:14.5px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px}
+.case-detail-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.case-detail-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);line-height:1.5}
+.case-detail-list li .iconify{color:var(--primary-light);font-size:18px;flex-shrink:0;margin-top:1px}
+.case-detail-side{background:linear-gradient(135deg,rgba(0,71,179,0.04),rgba(29,161,242,0.06));border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+
+.contacts-grid{display:grid;gap:20px}
+@media(min-width:768px){.contacts-grid{grid-template-columns:1fr 1fr}}
+.contact-info{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-xs)}
+.contact-info h3{font-size:20px;font-weight:800;margin-bottom:4px}
+.contact-info>p{font-size:13.5px;color:var(--text-secondary);margin-bottom:20px}
+.c-item{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--border-light)}
+.c-item:last-child{border-bottom:none}
+.c-icon{width:42px;height:42px;min-width:42px;border-radius:var(--radius-sm);background:linear-gradient(135deg,rgba(0,71,179,0.06),rgba(29,161,242,0.1));display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:18px}
+.c-item h4{font-size:12px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px}
+.c-item a,.c-item p{font-size:15px;font-weight:600;color:var(--text);text-decoration:none;transition:var(--transition)}
+.c-item a:hover{color:var(--primary)}
+.contact-form-wrap{background:linear-gradient(135deg,var(--primary) 0%,#0059CC 50%,var(--primary-light) 100%);border-radius:var(--radius-lg);padding:32px;position:relative;overflow:hidden}
+.contact-form-wrap::before{content:'';position:absolute;top:-40%;right:-30%;width:60%;height:160%;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 50%);pointer-events:none}
+.contact-form-wrap h3{color:#fff;font-size:20px;font-weight:800;margin-bottom:4px;position:relative;z-index:1}
+.contact-form-wrap>p{color:rgba(255,255,255,0.65);font-size:13.5px;margin-bottom:24px;position:relative;z-index:1}
+.cf{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+.cf input,.cf textarea,.cf select{padding:13px 16px;border:1.5px solid rgba(255,255,255,0.15);border-radius:var(--radius-sm);background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);color:#fff;font-family:'Inter',sans-serif;font-size:14px;transition:var(--transition);resize:none;width:100%;-webkit-appearance:none;appearance:none}
+.cf input::placeholder,.cf textarea::placeholder{color:rgba(255,255,255,0.4)}
+.cf select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+.cf select option{background:var(--primary);color:#fff}
+.cf input:focus,.cf textarea:focus,.cf select:focus{outline:none;border-color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.12)}
+.cf .btn-submit{padding:14px;font-size:14.5px;font-weight:700;background:#fff;color:var(--primary);border:none;border-radius:var(--radius-sm);cursor:pointer;transition:var(--transition);box-shadow:0 2px 12px rgba(0,0,0,0.1)}
+.cf .btn-submit:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,0.2)}
+
+.map-wrap{margin-top:32px;background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);overflow:hidden}
+.map-inner{height:280px;background:linear-gradient(135deg,rgba(0,71,179,0.03),rgba(29,161,242,0.05));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative}
+.map-inner::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,71,179,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,71,179,0.02) 1px,transparent 1px);background-size:40px 40px}
+.map-inner .iconify{font-size:56px;color:var(--primary);opacity:0.15;position:relative;z-index:1}
+.map-inner p{font-size:14px;color:var(--text-secondary);position:relative;z-index:1;font-weight:500}
+.map-cities{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;position:relative;z-index:1}
+.map-city{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:4px}
+.map-city::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--primary-light);opacity:0.5}
+
+.footer{background:var(--text);color:rgba(255,255,255,0.6);padding:56px 0 28px;position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(29,161,242,0.3),transparent)}
+.footer-grid{display:grid;gap:36px;margin-bottom:44px}
+@media(min-width:768px){.footer-grid{grid-template-columns:1.8fr 1fr 1fr 1fr}}
+.footer-brand-name{font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(135deg,rgba(255,255,255,0.95),rgba(255,255,255,0.7));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;display:block}
+.footer-brand p{font-size:13.5px;line-height:1.65;max-width:260px}
+.footer h5{color:rgba(255,255,255,0.4);font-size:11px;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.1em}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer ul a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13.5px;transition:var(--transition);cursor:pointer}
+.footer ul a:hover{color:rgba(255,255,255,0.9)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;color:rgba(255,255,255,0.35)}
+
+.toast{position:fixed;bottom:24px;right:24px;background:var(--white);border-radius:var(--radius-md);padding:14px 20px;box-shadow:var(--shadow-xl);display:flex;align-items:center;gap:10px;z-index:9999;transform:translateY(100px);opacity:0;transition:all 0.5s var(--ease);border-left:3px solid #10B981;max-width:360px}
+.toast.show{transform:translateY(0);opacity:1}
+.toast .iconify{font-size:20px;color:#10B981;flex-shrink:0}
+.toast p{font-size:13.5px;font-weight:600;line-height:1.4}
+
+@media(max-width:767px){
+  .floating-card{display:none}
+  .about-badge{position:relative;bottom:auto;right:auto;margin-top:12px;display:inline-flex}
+  .cta-card{padding:28px 20px}
+  .stat{padding:24px 16px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+}
+@media(max-width:479px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="header" id="header">
+<div class="header-inner">
+<a class="logo" data-nav="home">
+<img src="https://z-cdn-media.chatglm.cn/files/eefe4af2-3e36-4fa0-8ba9-df856e81a4cb.png?auth_key=1879143474-1c09fe61a9354a4bb1a8bd10603badcc-0-7e93412f3cfdc7175afa5c8e72c61edf" alt="КонтиТестЮГ" class="logo-img">
+</a>
+<nav class="nav" id="mainNav">
+<a data-nav="home" class="active">Главная</a>
+<a data-nav="about">О компании</a>
+<a data-nav="services">Услуги</a>
+<a data-nav="cases">Отрасли</a>
+<a data-nav="contacts">Контакты</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary" data-nav="contacts">Консультация</a>
+</div>
+<button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu-logo">
+<img src="https://z-cdn-media.chatglm.cn/files/eefe4af2-3e36-4fa0-8ba9-df856e81a4cb.png?auth_key=1879143474-1c09fe61a9354a4bb1a8bd10603badcc-0-7e93412f3cfdc7175afa5c8e72c61edf" alt="КонтиТестЮГ">
+</div>
+<a data-nav="home"><span class="iconify" data-icon="lucide:home"></span> Главная</a>
+<a data-nav="about"><span class="iconify" data-icon="lucide:building-2"></span> О компании</a>
+<a data-nav="services"><span class="iconify" data-icon="lucide:briefcase"></span> Услуги</a>
+<a data-nav="cases"><span class="iconify" data-icon="lucide:layers"></span> Отрасли</a>
+<a data-nav="contacts"><span class="iconify" data-icon="lucide:phone"></span> Контакты</a>
+</div>
+
+<!-- ═══════════ HOME ═══════════ -->
+<div class="page active visible" id="page-home">
+<section class="hero">
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="hero-grid-bg"></div>
+<div class="container">
+<div>
+<div class="hero-badge reveal"><span class="hero-badge-dot"></span>Сертификация с 2025 года</div>
+<h1 class="reveal reveal-d1">Ваш надёжный партнёр в мире <span class="gradient">стандартов качества</span> и безопасности</h1>
+<p class="hero-sub reveal reveal-d2">Сертификация и декларирование без рисков и лишних затрат. Обеспечиваем полное соответствие вашего продукта всем действующим нормам и стандартам.</p>
+<div class="hero-buttons reveal reveal-d3">
+<a class="btn btn-primary btn-lg" data-nav="contacts"><span class="iconify" data-icon="lucide:message-circle" style="font-size:17px"></span> Получить консультацию</a>
+<a class="btn btn-secondary btn-lg" data-nav="services"><span class="iconify" data-icon="lucide:calculator" style="font-size:17px"></span> Рассчитать стоимость</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-shield-wrap"><svg viewBox="0 0 260 260" fill="none"><defs><linearGradient id="sg1" x1="40" y1="15" x2="220" y2="245"><stop offset="0%" stop-color="#0047B3" stop-opacity="0.12"/><stop offset="100%" stop-color="#1DA1F2" stop-opacity="0.04"/></linearGradient><linearGradient id="sg2" x1="40" y1="15" x2="220" y2="245"><stop offset="0%" stop-color="#0047B3" stop-opacity="0.3"/><stop offset="100%" stop-color="#1DA1F2" stop-opacity="0.12"/></linearGradient></defs><path d="M130 22 L230 65 L230 138 C230 192 185 238 130 255 C75 238 30 192 30 138 L30 65 Z" fill="url(#sg1)" stroke="url(#sg2)" stroke-width="1.5"/><path d="M130 55 L200 85 L200 135 C200 178 168 212 130 225 C92 212 60 178 60 135 L60 85 Z" fill="rgba(0,71,179,0.03)" stroke="rgba(0,71,179,0.06)" stroke-width="1"/><path d="M105 132 L122 149 L160 111" stroke="#0047B3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/></svg></div>
+<div class="floating-card fc-1"><div class="fc-icon"><span class="iconify" data-icon="lucide:shield-check"></span></div><div class="fc-title">100% легитимность</div><div class="fc-desc">Все документы в официальных реестрах</div></div>
+<div class="floating-card fc-2"><div class="fc-icon"><span class="iconify" data-icon="lucide:user-check"></span></div><div class="fc-title">Персональный менеджер</div><div class="fc-desc">Ведём проект от начала до конца</div></div>
+<div class="floating-card fc-3"><div class="fc-icon"><span class="iconify" data-icon="lucide:zap"></span></div><div class="fc-title">Под ключ</div><div class="fc-desc">Всё в одном месте — без лишних инстанций</div></div>
+</div>
+</div>
+</section>
+
+<div class="trust-strip"><div class="container"><div class="trust-inner">
+<div class="trust-item reveal"><span class="iconify" data-icon="lucide:shield-check"></span> 100% легитимность</div>
+<div class="trust-item reveal reveal-d1"><span class="iconify" data-icon="lucide:scale"></span> По законодательству РФ</div>
+<div class="trust-item reveal reveal-d2"><span class="iconify" data-icon="lucide:user-check"></span> Персональный менеджер</div>
+<div class="trust-item reveal reveal-d3"><span class="iconify" data-icon="lucide:package-check"></span> Комплексное решение</div>
+</div></div></div>
+
+<section class="section"><div class="container"><div class="about-grid">
+<div class="reveal-left">
+<span class="section-label">О компании</span>
+<h2 class="section-title">Надёжный партнёр в мире стандартов</h2>
+<p class="section-subtitle">Наша миссия — не просто выдать разрешительный документ, а обеспечить полное соответствие вашего продукта всем действующим нормам и стандартам.</p>
+<div class="about-features">
+<div class="about-feat"><div class="about-feat-icon"><span class="iconify" data-icon="lucide:scale"></span></div><div><h4>Гарантия легитимности</h4><p>Работаем строго в рамках законодательства РФ.</p></div></div>
+<div class="about-feat"><div class="about-feat-icon"><span class="iconify" data-icon="lucide:user-check"></span></div><div><h4>Персональный подход</h4><p>За каждым клиентом закреплён персональный менеджер.</p></div></div>
+<div class="about-feat"><div class="about-feat-icon"><span class="iconify" data-icon="lucide:package-check"></span></div><div><h4>Решение «под ключ»</h4><p>Анализируем, подбираем схему, организуем испытания.</p></div></div>
+</div>
+<a class="btn btn-secondary" data-nav="about" style="margin-top:24px">Подробнее о компании →</a>
+</div>
+<div class="about-visual reveal-right"><div class="about-img"><span class="iconify" data-icon="lucide:building-2"></span></div><div class="about-badge"><div class="num">2025</div><div class="lbl">Год основания<br>компании</div></div></div>
+</div></div></section>
+
+<section class="stats"><div class="container"><div class="stats-grid">
+<div class="stat reveal"><div class="stat-num">100%</div><div class="stat-label">Легитимность</div></div>
+<div class="stat reveal reveal-d1"><div class="stat-num">8+</div><div class="stat-label">Видов услуг</div></div>
+<div class="stat reveal reveal-d2"><div class="stat-num">50+</div><div class="stat-label">Категорий товаров</div></div>
+<div class="stat reveal reveal-d3"><div class="stat-num">24ч</div><div class="stat-label">Скорость ответа</div></div>
+</div></div></section>
+
+<section class="section">
+<div class="container section-center">
+<span class="section-label reveal">Преимущества</span>
+<h2 class="section-title reveal reveal-d1">Почему выбирают нас</h2>
+</div>
+<div class="container"><div class="adv-grid">
+<div class="adv-card reveal"><div class="adv-icon"><span class="iconify" data-icon="lucide:shield-check"></span></div><h3>100% легитимность</h3><p>Все сертификаты заносятся в официальные реестры</p></div>
+<div class="adv-card reveal reveal-d1"><div class="adv-icon"><span class="iconify" data-icon="lucide:brain"></span></div><h3>Экспертиза в сложных нишах</h3><p>Высокотехнологичное оборудование, пищевая продукция, медизделия</p></div>
+<div class="adv-card reveal reveal-d2"><div class="adv-icon"><span class="iconify" data-icon="lucide:package-check"></span></div><h3>Всё под ключ</h3><p>Без обращения в несколько инстанций</p></div>
+<div class="adv-card reveal reveal-d3"><div class="adv-icon"><span class="iconify" data-icon="lucide:user-check"></span></div><h3>Персональный менеджер</h3><p>Ведём проект от начала и до конца</p></div>
+<div class="adv-card reveal reveal-d4"><div class="adv-icon"><span class="iconify" data-icon="lucide:shopping-bag"></span></div><h3>Работа с маркетплейсами</h3><p>Wildberries, Ozon, Яндекс.Маркет</p></div>
+<div class="adv-card reveal reveal-d5"><div class="adv-icon"><span class="iconify" data-icon="lucide:zap"></span></div><h3>Быстрое оформление</h3><p>Оперативно, без лишних задержек</p></div>
+</div></div>
+</section>
+
+<section class="section benefits-section"><div class="container">
+<div class="section-center" style="margin-bottom:48px">
+<span class="section-label reveal" style="color:rgba(255,255,255,0.5)">Результат</span>
+<h2 class="section-title reveal reveal-d1">Наши услуги позволяют вам</h2>
+</div>
+<div class="benefits-grid">
+<div class="benefit-card reveal"><span class="iconify" data-icon="lucide:store"></span><h4>Свободно продавать</h4><p>На любых торговых площадках</p></div>
+<div class="benefit-card reveal reveal-d1"><span class="iconify" data-icon="lucide:shield-alert"></span><h4>Избежать штрафов</h4><p>Предотвратить изъятие продукции</p></div>
+<div class="benefit-card reveal reveal-d2"><span class="iconify" data-icon="lucide:heart-handshake"></span><h4>Повысить доверие</h4><p>Укрепить доверие клиентов</p></div>
+<div class="benefit-card reveal reveal-d3"><span class="iconify" data-icon="lucide:trending-up"></span><h4>Конкурентное преимущество</h4><p>Подтверждённое качество</p></div>
+</div>
+</div></section>
+
+<section class="section cta-section"><div class="container"><div class="cta-card reveal-scale">
+<div><h2>Получите бесплатную консультацию</h2><p>Оставьте заявку — свяжемся в течение 24 часов</p></div>
+<form class="cta-form" onsubmit="handleSubmit(event)"><div class="cta-form-row"><input type="text" placeholder="Ваше имя" required><input type="tel" placeholder="+7 (___) ___-__-__" required></div><input type="email" placeholder="Email" required><button type="submit" class="btn-submit">Получить консультацию →</button></form>
+</div></div></section>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<div class="page" id="page-about">
+<section class="page-hero"><div class="hero-grid-bg"></div><div class="orb orb-2"></div><div class="container">
+<div class="breadcrumbs reveal"><a data-nav="home">Главная</a><span class="sep">/</span><span class="cur">О компании</span></div>
+<h1 class="reveal reveal-d1">Экспертиза, надёжность<br>и <span style="background:linear-gradient(135deg,var(--primary),var(--primary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">легитимность</span></h1>
+<p class="page-sub reveal reveal-d2">КонтиТестЮГ — ваш надёжный партнёр в мире стандартов качества и безопасности</p>
+</div></section>
+<section class="section" style="padding-top:0"><div class="container"><div class="about-grid">
+<div class="reveal-left"><span class="section-label">Наша миссия</span><h2 class="section-title">Не просто выдать документ — обеспечить соответствие</h2><p class="section-subtitle">Наша миссия — не просто выдать разрешительный документ, а обеспечить полное соответствие вашего продукта всем действующим нормам и стандартам.</p><p style="margin-top:20px;font-size:14.5px;color:var(--text-secondary);line-height:1.7">Мы анализируем вашу продукцию, помогаем выбрать оптимальную схему сертификации, организуем все необходимые испытания и экспертизы. Вам не нужно обращаться в несколько инстанций — всё можно сделать у нас.</p><p style="margin-top:16px;font-size:14.5px;color:var(--text-secondary);line-height:1.7;font-weight:600">Выбирайте надёжность и профессионализм. Выбирайте нас.</p></div>
+<div class="reveal-right"><div class="about-img"><span class="iconify" data-icon="lucide:target"></span></div></div>
+</div></div></section>
+<section class="section" style="background:var(--white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)">
+<div class="container section-center"><span class="section-label reveal">Ценности</span><h2 class="section-title reveal reveal-d1">Почему нам доверяют</h2></div>
+<div class="container"><div class="val-grid">
+<div class="val-card reveal"><div class="val-num">01</div><div><h4>Гарантия 100% легитимности</h4><p>Мы работаем строго в рамках законодательства РФ. Все сертификаты и декларации заносятся в официальные реестры.</p></div></div>
+<div class="val-card reveal reveal-d1"><div class="val-num">02</div><div><h4>Персональный подход</h4><p>За каждым клиентом закрепляется персональный менеджер, который ведёт проект от начала и до конца.</p></div></div>
+<div class="val-card reveal reveal-d2"><div class="val-num">03</div><div><h4>Комплексное решение «под ключ»</h4><p>Анализируем продукцию, выбираем оптимальную схему, организуем все испытания и экспертизы.</p></div></div>
+<div class="val-card reveal reveal-d3"><div class="val-num">04</div><div><h4>Экспертиза в сложных нишах</h4><p>Высокотехнологичное оборудование, пищевая продукция, медицинские изделия.</p></div></div>
+</div></div></section>
+<section class="section"><div class="container">
+<div style="max-width:600px"><span class="section-label reveal">Процесс</span><h2 class="section-title reveal reveal-d1">Как мы работаем</h2><p class="section-subtitle reveal reveal-d2">Прозрачный процесс от первого звонка до получения документов</p></div>
+<div class="timeline">
+<div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-num">ШАГ 01</div><h4>Анализ продукции</h4><p>Определяем код ТН ВЭД, подбираем схему сертификации.</p></div>
+<div class="tl-item reveal reveal-d1"><div class="tl-dot"></div><div class="tl-num">ШАГ 02</div><h4>Подбор оптимальной схемы</h4><p>Выбираем схему с учётом типа продукции и целей бизнеса.</p></div>
+<div class="tl-item reveal reveal-d2"><div class="tl-dot"></div><div class="tl-num">ШАГ 03</div><h4>Организация испытаний</h4><p>Лабораторные испытания в аккредитованных центрах.</p></div>
+<div class="tl-item reveal reveal-d3"><div class="tl-dot"></div><div class="tl-num">ШАГ 04</div><h4>Подготовка документов</h4><p>Полный комплект документации по требованиям регламентов.</p></div>
+<div class="tl-item reveal reveal-d4"><div class="tl-dot"></div><div class="tl-num">ШАГ 05</div><h4>Регистрация в реестре</h4><p>Контролируем регистрацию в ФГИС.</p></div>
+<div class="tl-item reveal reveal-d5"><div class="tl-dot"></div><div class="tl-num">ШАГ 06</div><h4>Выдача документов</h4><p>Передаём готовые документы с проверкой данных.</p></div>
+</div>
+</div></section>
+<section class="section cta-section"><div class="container"><div class="cta-card reveal-scale">
+<div><h2>Готовы начать сертификацию?</h2><p>Свяжитесь с нами — подберём оптимальную схему</p></div>
+<form class="cta-form" onsubmit="handleSubmit(event)"><div class="cta-form-row"><input type="text" placeholder="Ваше имя" required><input type="tel" placeholder="+7 (___) ___-__-__" required></div><input type="email" placeholder="Email" required><button type="submit" class="btn-submit">Получить консультацию →</button></form>
+</div></div></section>
+</div>
+
+<!-- ═══════════ SERVICES ═══════════ -->
+<div class="page" id="page-services">
+<section class="page-hero"><div class="hero-grid-bg"></div><div class="orb orb-1"></div><div class="container">
+<div class="breadcrumbs reveal"><a data-nav="home">Главная</a><span class="sep">/</span><span class="cur">Услуги</span></div>
+<h1 class="reveal reveal-d1">Услуги сертификации и разрешительной документации</h1>
+<p class="page-sub reveal reveal-d2">Полный комплекс услуг для легального вывода продукции на рынок.</p>
+</div></section>
+<section class="section" style="padding-top:0"><div class="container"><div class="svc-grid">
+<div class="svc-card reveal"><div class="svc-head"><div class="svc-icon"><span class="iconify" data-icon="lucide:shield-check"></span></div><div><h3>Обязательная сертификация</h3></div></div><p class="svc-desc">Оформление обязательных сертификатов соответствия. Обеспечиваем полное соответствие требованиям ТР ТС и ТР ЕАЭС. Организуем испытания и регистрируем документ в ФГИС.</p><div class="svc-benefits"><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> ТР ТС / ТР ЕАЭС</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Регистрация в ФГИС</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Защита от штрафов</div></div><div class="svc-footer"><span class="svc-time"><span class="iconify" data-icon="lucide:clock"></span> от 5 дней</span><a class="btn btn-primary" data-nav="contacts">Заказать</a></div></div>
+<div class="svc-card reveal reveal-d1"><div class="svc-head"><div class="svc-icon"><span class="iconify" data-icon="lucide:award"></span></div><div><h3>Добровольная сертификация</h3></div></div><p class="svc-desc">Подтверждение качества повышает конкурентоспособность, укрепляет доверие покупателей и открывает доступ к госзакупкам и маркетплейсам.</p><div class="svc-benefits"><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Доверие покупателей</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Доступ к госзакупкам</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Укрепление бренда</div></div><div class="svc-footer"><span class="svc-time"><span class="iconify" data-icon="lucide:clock"></span> от 3 дней</span><a class="btn btn-primary" data-nav="contacts">Заказать</a></div></div>
+<div class="svc-card reveal reveal-d2"><div class="svc-head"><div class="svc-icon"><span class="iconify" data-icon="lucide:file-check"></span></div><div><h3>Сертификация ИСО</h3></div></div><p class="svc-desc">Внедрение и сертификация ISO 9001, ISO 14001, ISO 45001. Помогаем выстроить процессы и пройти аудит.</p><div class="svc-benefits"><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> ISO 9001, 14001, 45001</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Международное признание</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Оптимизация процессов</div></div><div class="svc-footer"><span class="svc-time"><span class="iconify" data-icon="lucide:clock"></span> от 10 дней</span><a class="btn btn-primary" data-nav="contacts">Заказать</a></div></div>
+<div class="svc-card reveal reveal-d3"><div class="svc-head"><div class="svc-icon"><span class="iconify" data-icon="lucide:file-text"></span></div><div><h3>Техническая документация</h3></div></div><p class="svc-desc">ТУ, паспорта безопасности (ПБ), руководства по эксплуатации (РЭ), технологические инструкции по ГОСТ.</p><div class="svc-benefits"><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> ТУ, ПБ, РЭ</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> По ГОСТ</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Согласование</div></div><div class="svc-footer"><span class="svc-time"><span class="iconify" data-icon="lucide:clock"></span> от 7 дней</span><a class="btn btn-primary" data-nav="contacts">Заказать</a></div></div>
+<div class="svc-card reveal"><div class="svc-head"><div class="svc-icon"><span class="iconify" data-icon="lucide:stamp"></span></div><div><h3>Разрешительная документация</h3></div></div><p class="svc-desc">Декларации соответствия, СГР, регистрационные удостоверения (РУ), заключения ФБУЗ.</p><div class="svc-benefits"><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Декларации ТР ТС</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> СГР, РУ</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Заключения ФБУЗ</div></div><div class="svc-footer"><span class="svc-time"><span class="iconify" data-icon="lucide:clock"></span> от 3 дней</span><a class="btn btn-primary" data-nav="contacts">Заказать</a></div></div>
+<div class="svc-card reveal reveal-d1"><div class="svc-head"><div class="svc-icon"><span class="iconify" data-icon="lucide:trademark"></span></div><div><h3>Патентование и товарный знак</h3></div></div><p class="svc-desc">Регистрация товарных знаков в Роспатенте, патентование изобретений и полезных моделей.</p><div class="svc-benefits"><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Товарные знаки</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Патенты</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Роспатент</div></div><div class="svc-footer"><span class="svc-time"><span class="iconify" data-icon="lucide:clock"></span> от 14 дней</span><a class="btn btn-primary" data-nav="contacts">Заказать</a></div></div>
+<div class="svc-card reveal reveal-d2"><div class="svc-head"><div class="svc-icon"><span class="iconify" data-icon="lucide:scan-line"></span></div><div><h3>«Честный знак»</h3></div></div><p class="svc-desc">Регистрация, коды маркировки, настройка ЭДО, интеграция с учётными системами, обучение.</p><div class="svc-benefits"><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Регистрация</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Коды маркировки</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> ЭДО</div></div><div class="svc-footer"><span class="svc-time"><span class="iconify" data-icon="lucide:clock"></span> от 2 дней</span><a class="btn btn-primary" data-nav="contacts">Заказать</a></div></div>
+<div class="svc-card reveal reveal-d3"><div class="svc-head"><div class="svc-icon"><span class="iconify" data-icon="lucide:flask-conical"></span></div><div><h3>Протоколы испытаний</h3></div></div><p class="svc-desc">Лабораторные испытания с выдачей официальных протоколов. Аккредитованные лаборатории по всей России.</p><div class="svc-benefits"><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Аккредитованные лаборатории</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Официальные протоколы</div><div class="svc-benefit"><span class="iconify" data-icon="lucide:check"></span> Срочные испытания</div></div><div class="svc-footer"><span class="svc-time"><span class="iconify" data-icon="lucide:clock"></span> от 5 дней</span><a class="btn btn-primary" data-nav="contacts">Заказать</a></div></div>
+</div></div></section>
+<section class="section cta-section"><div class="container"><div class="cta-card reveal-scale">
+<div><h2>Нужна консультация?</h2><p>Подберём оптимальную схему сертификации</p></div>
+<form class="cta-form" onsubmit="handleSubmit(event)"><div class="cta-form-row"><input type="text" placeholder="Ваше имя" required><input type="tel" placeholder="+7 (___) ___-__-__" required></div><input type="email" placeholder="Email" required><button type="submit" class="btn-submit">Получить консультацию →</button></form>
+</div></div></section>
+</div>
+
+<!-- ═══════════ CASES ═══════════ -->
+<div class="page" id="page-cases">
+<section class="page-hero"><div class="hero-grid-bg"></div><div class="orb orb-1"></div><div class="container">
+<div class="breadcrumbs reveal"><a data-nav="home">Главная</a><span class="sep">/</span><span class="cur">Отрасли</span></div>
+<h1 class="reveal reveal-d1">Отрасли и кейсы</h1>
+<p class="page-sub reveal reveal-d2">Если ваш продукт имеет специфические особенности — мы знаем, как оформить правильный документ.</p>
+</div></section>
+<section class="section" style="padding-top:0"><div class="container"><div class="cases-grid">
+<div class="case-card reveal" data-scroll-to="case-food"><img src="https://picsum.photos/seed/food-k6/600/450.jpg" alt="Пищевое производство" loading="lazy"><div class="case-overlay"><div class="case-tag">ТР ТС 021/2011</div><h3>Пищевое производство</h3><p>Декларации, СГР, ТУ, маркировка</p></div><div class="case-arrow"><span class="iconify" data-icon="lucide:arrow-up-right"></span></div></div>
+<div class="case-card reveal reveal-d1" data-scroll-to="case-med"><img src="https://picsum.photos/seed/med-k6/600/450.jpg" alt="Медицинские изделия" loading="lazy"><div class="case-overlay"><div class="case-tag">РУ</div><h3>Медицинские изделия</h3><p>РУ, клинические испытания, ИСО 13485</p></div><div class="case-arrow"><span class="iconify" data-icon="lucide:arrow-up-right"></span></div></div>
+<div class="case-card reveal reveal-d2" data-scroll-to="case-tech"><img src="https://picsum.photos/seed/htech-k6/600/450.jpg" alt="Оборудование" loading="lazy"><div class="case-overlay"><div class="case-tag">ТР ТС 010/020</div><h3>Оборудование</h3><p>ТР ТС 010, 020, 032, 004</p></div><div class="case-arrow"><span class="iconify" data-icon="lucide:arrow-up-right"></span></div></div>
+<div class="case-card reveal reveal-d3" data-scroll-to="case-consumer"><img src="https://picsum.photos/seed/cons-k6/600/450.jpg" alt="ТНП" loading="lazy"><div class="case-overlay"><div class="case-tag">Честный знак</div><h3>Товары народного потребления</h3><p>Маркировка и сертификация</p></div><div class="case-arrow"><span class="iconify" data-icon="lucide:arrow-up-right"></span></div></div>
+<div class="case-card reveal reveal-d4" data-scroll-to="case-manufacturing"><img src="https://picsum.photos/seed/manuf-k6/600/450.jpg" alt="Производство" loading="lazy"><div class="case-overlay"><div class="case-tag">ИСО 9001</div><h3>Производственные компании</h3><p>Менеджмент качества и техдокументация</p></div><div class="case-arrow"><span class="iconify" data-icon="lucide:arrow-up-right"></span></div></div>
+<div class="case-card reveal reveal-d5" data-scroll-to="case-cosmetics"><img src="https://picsum.photos/seed/cosm-k6/600/450.jpg" alt="Косметика" loading="lazy"><div class="case-overlay"><div class="case-tag">СГР</div><h3>Косметическая продукция</h3><p>СГР, декларации, испытания</p></div><div class="case-arrow"><span class="iconify" data-icon="lucide:arrow-up-right"></span></div></div>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="container">
+<div class="case-detail reveal" id="case-food"><div class="case-detail-grid"><div><h3>Пищевое производство</h3><p class="case-detail-desc">Пищевая продукция подлежит обязательному подтверждению соответствия в рамках ТР ТС 021/2011.</p><ul class="case-detail-list"><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Декларации ТР ТС 021/2011</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Свидетельства СГР</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Разработка ТУ</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> ХАССП (HACCP)</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Маркировка «Честный знак»</li></ul></div><div class="case-detail-side"><span class="iconify" data-icon="lucide:salad" style="font-size:56px;color:var(--primary);opacity:0.3;margin-bottom:16px"></span><p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">Регламент</p><p style="font-size:18px;font-weight:800;font-family:'Manrope',sans-serif;color:var(--primary)">ТР ТС 021/2011</p></div></div></div>
+<div class="case-detail reveal" id="case-med"><div class="case-detail-grid"><div style="order:1"><h3>Медицинские изделия</h3><p class="case-detail-desc">Один из самых сложных процессов. Сопровождаем на всех этапах: от классификации до получения РУ.</p><ul class="case-detail-list"><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Регистрационные удостоверения</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Клинические испытания</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> ИСО 13485</li></ul></div><div class="case-detail-side" style="order:0"><span class="iconify" data-icon="lucide:heart-pulse" style="font-size:56px;color:var(--primary);opacity:0.3;margin-bottom:16px"></span><p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">Документ</p><p style="font-size:18px;font-weight:800;font-family:'Manrope',sans-serif;color:var(--primary)">РУ Росздравнадзора</p></div></div></div>
+<div class="case-detail reveal" id="case-tech"><div class="case-detail-grid"><div><h3>Высокотехнологичное оборудование</h3><p class="case-detail-desc">Подтверждение безопасности по нескольким ТР ТС одновременно.</p><ul class="case-detail-list"><li><span class="iconify" data-icon="lucide:check-circle-2"></span> ТР ТС 010/2011</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> ТР ТС 020/2011</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> ТР ТС 032/2013</li></ul></div><div class="case-detail-side"><span class="iconify" data-icon="lucide:cpu" style="font-size:56px;color:var(--primary);opacity:0.3;margin-bottom:16px"></span><p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">Регламенты</p><p style="font-size:18px;font-weight:800;font-family:'Manrope',sans-serif;color:var(--primary)">ТР ТС 010/020/032</p></div></div></div>
+<div class="case-detail reveal" id="case-consumer"><div class="case-detail-grid"><div style="order:1"><h3>Товары народного потребления</h3><p class="case-detail-desc">Маркировка и сертификация для выхода на маркетплейсы.</p><ul class="case-detail-list"><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Обязательная и добровольная сертификация</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Регистрация в «Честный знак»</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Коды маркировки и ЭДО</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Подготовка для маркетплейсов</li></ul></div><div class="case-detail-side" style="order:0"><span class="iconify" data-icon="lucide:shopping-bag" style="font-size:56px;color:var(--primary);opacity:0.3;margin-bottom:16px"></span><p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">Система</p><p style="font-size:18px;font-weight:800;font-family:'Manrope',sans-serif;color:var(--primary)">Честный ЗНАК</p></div></div></div>
+<div class="case-detail reveal" id="case-manufacturing"><div class="case-detail-grid"><div><h3>Производственные компании</h3><p class="case-detail-desc">Менеджмент качества и полный комплект техдокументации.</p><ul class="case-detail-list"><li><span class="iconify" data-icon="lucide:check-circle-2"></span> ИСО 9001, 14001, 45001</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Разработка ТУ и инструкций</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Паспорта безопасности и РЭ</li></ul></div><div class="case-detail-side"><span class="iconify" data-icon="lucide:factory" style="font-size:56px;color:var(--primary);opacity:0.3;margin-bottom:16px"></span><p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">Стандарт</p><p style="font-size:18px;font-weight:800;font-family:'Manrope',sans-serif;color:var(--primary)">ИСО 9001 / 14001 / 45001</p></div></div></div>
+<div class="case-detail reveal" id="case-cosmetics"><div class="case-detail-grid"><div style="order:1"><h3>Косметическая продукция</h3><p class="case-detail-desc">СГР или декларирование в зависимости от категории.</p><ul class="case-detail-list"><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Свидетельства СГР</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Декларации ТР ТС 009/2011</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Токсикологические испытания</li><li><span class="iconify" data-icon="lucide:check-circle-2"></span> Маркировка «Честный знак»</li></ul></div><div class="case-detail-side" style="order:0"><span class="iconify" data-icon="lucide:sparkles" style="font-size:56px;color:var(--primary);opacity:0.3;margin-bottom:16px"></span><p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">Регламент</p><p style="font-size:18px;font-weight:800;font-family:'Manrope',sans-serif;color:var(--primary)">ТР ТС 009/2011</p></div></div></div>
+</div></section>
+<section class="section cta-section"><div class="container"><div class="cta-card reveal-scale">
+<div><h2>Не нашли свою отрасль?</h2><p>Мы работаем со всеми категориями продукции.</p></div>
+<form class="cta-form" onsubmit="handleSubmit(event)"><div class="cta-form-row"><input type="text" placeholder="Ваше имя" required><input type="tel" placeholder="+7 (___) ___-__-__" required></div><input type="email" placeholder="Email" required><button type="submit" class="btn-submit">Консультация →</button></form>
+</div></div></section>
+</div>
+
+<!-- ═══════════ CONTACTS ═══════════ -->
+<div class="page" id="page-contacts">
+<section class="page-hero"><div class="hero-grid-bg"></div><div class="orb orb-1"></div><div class="container">
+<div class="breadcrumbs reveal"><a data-nav="home">Главная</a><span class="sep">/</span><span class="cur">Контакты</span></div>
+<h1 class="reveal reveal-d1">Свяжитесь с нами</h1>
+<p class="page-sub reveal reveal-d2">Ответим на все вопросы и подберём решение для вашего бизнеса</p>
+</div></section>
+<section class="section" style="padding-top:0"><div class="container"><div class="contacts-grid">
+<div class="reveal-left"><div class="contact-info">
+<h3>Контактная информация</h3><p>Мы на связи с 9:00 до 18:00 (МСК), пн-пт</p>
+<div class="c-item"><div class="c-icon"><span class="iconify" data-icon="lucide:phone"></span></div><div><h4>Телефон</h4><a href="tel:+79954457101">8-995-445-71-01</a></div></div>
+<div class="c-item"><div class="c-icon"><span class="iconify" data-icon="lucide:mail"></span></div><div><h4>Электронная почта</h4><a href="mailto:info@kontitestug.ru">info@kontitestug.ru</a></div></div>
+<div class="c-item"><div class="c-icon"><span class="iconify" data-icon="lucide:map-pin"></span></div><div><h4>География</h4><p>Работаем по всей России дистанционно</p></div></div>
+<div class="c-item"><div class="c-icon"><span class="iconify" data-icon="lucide:clock"></span></div><div><h4>Режим работы</h4><p>Пн — Пт: 9:00 — 18:00 (МСК)</p></div></div>
+</div></div>
+<div class="reveal-right"><div class="contact-form-wrap">
+<h3>Оставить заявку</h3><p>Заполните форму и мы свяжемся с вами</p>
+<form class="cf" onsubmit="handleSubmit(event)">
+<input type="text" placeholder="Ваше имя" required>
+<input type="tel" placeholder="+7 (___) ___-__-__" required>
+<input type="email" placeholder="Email" required>
+<select required><option value="" disabled selected>Выберите услугу</option><option>Обязательная сертификация</option><option>Добровольная сертификация</option><option>Сертификация ИСО</option><option>Техническая документация</option><option>Разрешительная документация</option><option>Патентование</option><option>Честный знак</option><option>Протоколы испытаний</option><option>Другое</option></select>
+<textarea rows="4" placeholder="Опишите ваш запрос..."></textarea>
+<button type="submit" class="btn-submit">Отправить заявку →</button>
+</form>
+</div></div>
+</div>
+<div class="map-wrap reveal"><div class="map-inner"><span class="iconify" data-icon="lucide:globe"></span><p>Работаем по всей России</p><div class="map-cities"><span class="map-city">Ростов-на-Дону</span><span class="map-city">Москва</span><span class="map-city">Краснодар</span><span class="map-city">Екатеринбург</span></div></div></div>
+</div></section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<span class="footer-brand-name">КонтиТестЮГ</span>
+<p>Ваш надёжный партнёр в мире стандартов качества и безопасности.</p>
+</div>
+<div><h5>Навигация</h5><ul><li><a data-nav="home">Главная</a></li><li><a data-nav="about">О компании</a></li><li><a data-nav="services">Услуги</a></li><li><a data-nav="cases">Отрасли</a></li><li><a data-nav="contacts">Контакты</a></li></ul></div>
+<div><h5>Услуги</h5><ul><li><a data-nav="services">Обязательная сертификация</a></li><li><a data-nav="services">Добровольная сертификация</a></li><li><a data-nav="services">Сертификация ИСО</a></li><li><a data-nav="services">Честный знак</a></li><li><a data-nav="services">Протоколы испытаний</a></li></ul></div>
+<div><h5>Контакты</h5><ul><li><a href="tel:+79954457101">8-995-445-71-01</a></li><li><a href="mailto:info@kontitestug.ru">info@kontitestug.ru</a></li><li>Пн-Пт: 9:00 — 18:00 МСК</li></ul></div>
+</div>
+<div class="footer-bottom"><span>© 2025 КонтиТестЮГ. Все права защищены.</span><span>Выбирайте надёжность. Выбирайте нас.</span></div>
+</div></footer>
+
+<div class="toast" id="toast"><span class="iconify" data-icon="lucide:check-circle-2"></span><p>Заявка отправлена! Мы свяжемся с вами в ближайшее время.</p></div>
+
+<script>
+var currentPage='home';var revealObserver=null;
+function navigateTo(p){if(!p||p===currentPage)return;var all=document.querySelectorAll('.page');for(var i=0;i<all.length;i++)all[i].classList.remove('active','visible');var t=document.getElementById('page-'+p);if(!t)return;t.classList.add('active');void t.offsetHeight;t.classList.add('visible');currentPage=p;var nl=document.querySelectorAll('#mainNav a');for(var j=0;j<nl.length;j++)nl[j].classList.toggle('active',nl[j].getAttribute('data-nav')===p);window.scrollTo(0,0);closeMobile();setTimeout(observeReveals,200)}
+function closeMobile(){document.getElementById('burger').classList.remove('active');document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow=''}
+function observeReveals(){var els=document.querySelectorAll('.reveal:not(.visible),.reveal-left:not(.visible),.reveal-right:not(.visible),.reveal-scale:not(.visible)');if(!els.length)return;if(revealObserver)revealObserver.disconnect();revealObserver=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(entries[i].isIntersecting){entries[i].target.classList.add('visible');revealObserver.unobserve(entries[i].target)}}},{threshold:0.06,rootMargin:'0px 0px -24px 0px'});for(var k=0;k<els.length;k++)revealObserver.observe(els[k])}
+function handleSubmit(e){e.preventDefault();var t=document.getElementById('toast');t.classList.add('show');e.target.reset();setTimeout(function(){t.classList.remove('show')},4500)}
+document.addEventListener('DOMContentLoaded',function(){
+document.addEventListener('click',function(e){var el=e.target;while(el&&el!==document){if(el.hasAttribute&&el.hasAttribute('data-nav')){e.preventDefault();navigateTo(el.getAttribute('data-nav'));return}el=el.parentNode}});
+var burger=document.getElementById('burger');burger.addEventListener('click',function(e){e.stopPropagation();burger.classList.toggle('active');var mm=document.getElementById('mobileMenu');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':''});
+var header=document.getElementById('header'),sp=document.getElementById('scrollProgress'),ticking=false;
+window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){header.classList.toggle('scrolled',window.scrollY>16);var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;sp.style.width=h>0?(window.scrollY/h*100)+'%':'0';ticking=false});ticking=true}},{passive:true});
+var rafId=null;window.addEventListener('scroll',function(){if(rafId)return;rafId=requestAnimationFrame(function(){var sy=window.scrollY;var cards=document.querySelectorAll('.floating-card');for(var i=0;i<cards.length;i++)cards[i].style.transform='translateY('+(sy*(0.02+i*0.01))+'px)';rafId=null})},{passive:true});
+var ti=document.querySelectorAll('input[type="tel"]');for(var t=0;t<ti.length;t++){ti[t].addEventListener('focus',function(){if(!this.value)this.value='+7 '});ti[t].addEventListener('blur',function(){if(this.value.trim()==='+7')this.value=''})}
+document.addEventListener('click',function(e){var card=e.target.closest('.case-card');if(card){var targetId=card.getAttribute('data-scroll-to');if(targetId){var target=document.getElementById(targetId);if(target){var headerH=document.getElementById('header').offsetHeight+16;window.scrollTo({top:target.getBoundingClientRect().top+window.scrollY-headerH,behavior:'smooth'})}}}});
+observeReveals()});
+</script>
+</body>
+</html>
